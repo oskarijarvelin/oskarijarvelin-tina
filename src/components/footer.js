@@ -9,14 +9,12 @@ export const Footer = styled(({ ...styleProps }) => {
       <Wrapper>
         © 2012 - {new Date().getFullYear()}:
         {` `}
-        <a href="https://oskarijarvelin.fi">Oskari Järvelin</a>.{' '}
-        Kaikki oikeudet pidätetään.{' '}
-        <a href="https://oskarijarvelin.fi/tietosuojaseloste">Tietosuojaseloste</a>.
+        <a href="https://oskarijarvelin.fi">Oskari Järvelin</a>.
       </Wrapper>
     </footer>
   )
 })`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 3rem;
   text-align: center;
   height: 3rem;
@@ -24,4 +22,10 @@ export const Footer = styled(({ ...styleProps }) => {
     transparentize(0.97, props.theme.color.foreground)};
   box-shadow: inset 0 1px 0
     ${props => transparentize(0.95, props.theme.color.foreground)};
+
+  a {
+    font-family: 'Roboto Condensed';
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
 `
