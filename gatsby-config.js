@@ -106,7 +106,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Lato:400,700", "RobotoCondensed:700"],
+          families: ["OpenSans:400,700", "RobotoCondensed:700"],
         },
       },
     },

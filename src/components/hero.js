@@ -6,7 +6,7 @@ import BackgroundImage from "gatsby-background-image"
 
 export const Hero = ({ hero }) => {
   return (
-    <HeroWrapper>
+    <HeroWrapper large={hero.large}>
       <HeroBackground>
         {hero.overlay && <Overlay />}
         {hero.image && (
@@ -45,10 +45,13 @@ const HeroWrapper = styled.div`
   flex: 0 0 auto;
   top: 0;
   padding-top: ${props => props.theme.header.height};
-  min-height: calc(
-    ${props => props.theme.header.height} +
-      ${props => props.theme.header.height}
-  );
+  min-height: 16rem;
+
+  ${props =>
+    props.large &&
+    css`
+      min-height: calc(100vh - 8rem);
+    `}
 
   ${props =>
     props.theme.hero.parallax &&
@@ -59,12 +62,12 @@ const HeroWrapper = styled.div`
 
 const HeroContent = styled.div`
   display: block;
-  padding: 3rem 0;
+  padding: 8rem 0;
 
   ${props =>
     props.large &&
     css`
-      padding: 8rem 0;
+      padding: 16rem 0;
     `}
 `
 
@@ -82,6 +85,7 @@ const HeroBackground = styled.div`
   padding: 0;
 
   ${Overlay} {
+    opacity: 0.4;
     z-index: 1;
   }
 
@@ -126,7 +130,7 @@ export const HeroImage = styled(BackgroundImage)`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-position: center;
+  background-position: 0% 0%;
   background-size: cover;
   background-repeat: no-repeat;
 `
