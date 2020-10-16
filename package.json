@@ -64,9 +64,9 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "clean": "rm -rf ./cache",
-    "dev": "yarn clean && yarn develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "yarn develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
