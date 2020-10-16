@@ -75,15 +75,6 @@ function Post(props) {
         <Paper>
           <Meta>
             <MetaSpan>{data.frontmatter.date}</MetaSpan>
-            {data.frontmatter.authors && data.frontmatter.authors.length > 0 && (
-              <MetaSpan>
-                <em>By</em>&nbsp;
-                <ListAuthors authorIDs={data.frontmatter.authors} />
-              </MetaSpan>
-            )}
-            <MetaActions>
-              <Link to="/blogi">← Back to Blog</Link>
-            </MetaActions>
           </Meta>
           <h1>
             <InlineTextField name="rawFrontmatter.title" />

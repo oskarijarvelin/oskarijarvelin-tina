@@ -42,12 +42,6 @@ export default function List({ data, pageContext }) {
                 <p>{item.node.excerpt}</p>
                 <Meta>
                   <MetaSpan>{item.node.frontmatter.date}</MetaSpan>
-                  {item.node.frontmatter.authors && (
-                    <MetaSpan>
-                      <em>By</em>&nbsp;
-                      <ListAuthors authorIDs={item.node.frontmatter.authors} />
-                    </MetaSpan>
-                  )}
                   <MetaActions>
                     <Link to={item.node.frontmatter.path}>Read Article →</Link>
                   </MetaActions>

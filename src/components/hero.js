@@ -45,12 +45,18 @@ const HeroWrapper = styled.div`
   flex: 0 0 auto;
   top: 0;
   padding-top: ${props => props.theme.header.height};
-  min-height: 16rem;
+  min-height: 12rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    min-height: 16rem;
+  }
 
   ${props =>
     props.large &&
     css`
+    @media (min-width: ${props => props.theme.breakpoints.small}) {
       min-height: calc(100vh - 8rem);
+    }
     `}
 
   ${props =>
@@ -62,12 +68,18 @@ const HeroWrapper = styled.div`
 
 const HeroContent = styled.div`
   display: block;
-  padding: 8rem 0;
+  padding: 3rem 0;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    padding: 8rem 0;
+  }
 
   ${props =>
     props.large &&
     css`
-      padding: 16rem 0;
+      @media (min-width: ${props => props.theme.breakpoints.small}) {
+        padding: 16rem 0;
+      }
     `}
 `
 
@@ -98,12 +110,13 @@ const HeroBackground = styled.div`
 `
 
 export const Headline = styled.h2`
-  font-size: 2.6em;
-  line-height: 1.2;
   color: ${props => props.theme.color.white};
-  word-spacing: 1px;
+  font-size: 2.6em;
   font-weight: 700;
+  line-height: 1.2;
+  max-width: 80%;
   text-transform: none;
+  word-spacing: 1px;
 `
 
 export const Textline = styled.p`
@@ -130,7 +143,11 @@ export const HeroImage = styled(BackgroundImage)`
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-position: 0% 0%;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    background-position: 0% 0%;
+  }
 `
