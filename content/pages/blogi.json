@@ -1,11 +1,11 @@
 {
-  "path": "/blog",
-  "title": "Blog",
+  "path": "/blogi",
+  "title": "Blogi",
   "pageType": "list",
   "listType": "post",
   "hero": {
     "image": "../images/coffee-beans.jpg",
-    "large": true,
+    "large": false,
     "overlay": true
   }
 }
