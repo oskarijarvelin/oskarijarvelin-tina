@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Moon, Sun } from "styled-icons/boxicons-regular"
+import { Menu, X } from "styled-icons/boxicons-regular"
 import styled, { css } from "styled-components"
 import { mix, transparentize } from "polished"
 import { Link } from "gatsby"
@@ -35,13 +35,6 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
             </NavLink>
           </NavItem>
         ))}
-        <NavItem>
-          <DarkModeToggle
-            aria-label="Toggle Dark Theme"
-            onClick={toggleDarkMode}
-            isDarkMode={isDarkMode}
-          />
-        </NavItem>
       </StyledNavbar>
       <NavToggle
         aria-label="Toggle Nav"
@@ -54,6 +47,8 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
 
 export const StyledNavbar = styled.ul`
   color: inherit;
+  order: 3;
+
   @media (max-width: ${props => props.theme.breakpoints.small}) {
     position: absolute;
     bottom: 0;
@@ -90,6 +85,7 @@ export const StyledNavbar = styled.ul`
     margin: 0;
     opacity: 1;
     pointer-events: all;
+    order: 2;
   }
 `
 
@@ -345,8 +341,8 @@ export const NavLink = styled(({ children, ...styleProps }) => (
 export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
   return (
     <button {...styleProps}>
-      <span className="closed">Open Menu</span>
-      <span className="open">Close Menu</span>
+      <span className="closed"><Menu /></span>
+      <span className="open"><X /></span>
     </button>
   )
 })`
@@ -365,6 +361,12 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
   opacity: 0.5;
   overflow: visible;
   transition: all 150ms ${p => p.theme.easing};
+  order: 4;
+
+  svg {
+    height: auto;
+    width: 32px;
+  }
 
   .open {
     display: none;
@@ -394,83 +396,6 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
       }
       .closed {
         display: none;
-      }
-    `};
-`
-
-export const DarkModeToggle = styled(({ ...styleProps }) => {
-  return (
-    <button {...styleProps}>
-      <Sun />
-      <Moon />
-    </button>
-  )
-})`
-  position: relative;
-  flex: 0 0 auto;
-  width: 100%;
-  height: 2.75rem;
-  align-self: stretch;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  opacity: 0.5;
-  overflow: hidden;
-  transition: all 300ms ${props => props.theme.easing};
-  transform-origin: 50% 50%;
-
-  @media (min-width: ${props => props.theme.breakpoints.small}) {
-    width: 1.5rem;
-    height: 100%;
-    margin-left: 1rem;
-  }
-
-  svg {
-    position: absolute;
-    top: calc(50% - 0.75rem);
-    left: calc(50% - 0.75rem);
-    width: 1.5rem;
-    height: auto;
-    fill: currentColor;
-    transition: all 150ms ${props => props.theme.easing};
-    transform-origin: 50% 50%;
-    &:first-child {
-      opacity: 0;
-      transform: rotate(-90deg);
-    }
-    &:last-child {
-      opacity: 1;
-      transform: rotate(0deg);
-    }
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    transform: rotate(360deg);
-    opacity: 1;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-
-  ${props =>
-    props.theme.isDarkMode &&
-    css`
-      svg {
-        &:first-child {
-          opacity: 1;
-          transform: rotate(0deg);
-        }
-        &:last-child {
-          opacity: 0;
-          transform: rotate(90deg);
-        }
       }
     `};
 `

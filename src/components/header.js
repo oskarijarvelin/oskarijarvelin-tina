@@ -1,6 +1,7 @@
 import React from "react"
 import { Wrapper } from "./style"
 import styled, { css } from "styled-components"
+import { Moon, Sun } from "styled-icons/boxicons-regular"
 import { transparentize } from "polished"
 import { Nav } from "./nav"
 import { ThemeContext } from "./theme"
@@ -17,6 +18,11 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
                 {siteTitle}
               </SiteLink>
             </SiteTitle>
+            <DarkModeToggle
+              aria-label="Toggle Dark Theme"
+              onClick={toggleDarkMode}
+              isDarkMode={isDarkMode}
+            />
             <Nav toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
           </HeaderWrapper>
         </header>
@@ -94,12 +100,13 @@ export const SiteLink = styled(Link)`
 
 export const SiteTitle = styled.h1`
   margin: 0;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   font-family: 'Roboto Condensed';
   font-size: 1rem;
   font-weight: 700;
   align-self: stretch;
   display: flex;
+  order: 1;
 `
 
 export const HeaderWrapper = styled(Wrapper)`
@@ -108,4 +115,81 @@ export const HeaderWrapper = styled(Wrapper)`
   justify-content: space-between;
   align-items: center;
   height: 100%;
+`
+
+export const DarkModeToggle = styled(({ ...styleProps }) => {
+  return (
+    <button {...styleProps}>
+      <Sun />
+      <Moon />
+    </button>
+  )
+})`
+  position: relative;
+  width: 1.5rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.5;
+  order: 2;
+  overflow: hidden;
+  transition: all 300ms ${props => props.theme.easing};
+  transform-origin: 50% 50%;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    width: 1.5rem;
+    height: 100%;
+    margin-left: 1rem;
+    order: 3;
+  }
+
+  svg {
+    position: absolute;
+    top: calc(50% - 0.75rem);
+    left: calc(50% - 0.75rem);
+    width: 1.5rem;
+    height: auto;
+    fill: currentColor;
+    transition: all 150ms ${props => props.theme.easing};
+    transform-origin: 50% 50%;
+    &:first-child {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+    &:last-child {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  ${props =>
+    props.theme.isDarkMode &&
+    css`
+      svg {
+        &:first-child {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+        &:last-child {
+          opacity: 0;
+          transform: rotate(90deg);
+        }
+      }
+    `};
 `
