@@ -1,6 +1,6 @@
 {
-  "title": "About",
-  "path": "/about",
+  "title": "Osaaminen",
+  "path": "/osaaminen",
   "blocks": [
     {
       "_template": "TitleBlock",
@@ -13,5 +13,9 @@
       "_template": "ContentBlock"
     }
   ],
-  "displayTitle": true
+  "displayTitle": true,
+  "hero": {
+    "image": "../images/ulkopotretit-4200.jpg",
+    "large": true
+  }
 }
