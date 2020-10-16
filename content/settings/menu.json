@@ -1,20 +1,16 @@
 {
   "menuItems": [
     {
-      "label": "Home",
+      "label": "Etusivu",
       "link": "/"
     },
     {
-      "label": "About",
+      "label": "Osaaminen",
       "link": "/about"
     },
     {
-      "label": "Blog",
+      "label": "Blogi",
       "link": "/blog"
-    },
-    {
-      "label": "Contact",
-      "link": "/contact"
     }
   ]
 }
