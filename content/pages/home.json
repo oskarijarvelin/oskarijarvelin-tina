@@ -8,21 +8,8 @@
   ],
   "hero": {
     "headline": "Kuinka voin palvella?",
-    "textline": "This template is filled with sample content to get you started.",
-    "ctas": [
-      {
-        "label": "Read The Blog",
-        "link": "/blog",
-        "primary": true,
-        "arrow": true
-      },
-      {
-        "label": "Contact Us",
-        "link": "/contact",
-        "arrow": false,
-        "primary": false
-      }
-    ],
+    "textline": "",
+    "ctas": [],
     "image": "../images/cafe-2.jpg",
     "large": true
   },
