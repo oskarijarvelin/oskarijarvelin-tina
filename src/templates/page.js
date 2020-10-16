@@ -15,7 +15,7 @@ export default function Page({ data }) {
 
   return (
     <PageLayout page={page}>
-      <Paper>
+      <Paper className="fullwidth">
         {blocks &&
           blocks.map(({ _template, ...data }, i) => {
             switch (_template) {

@@ -33,7 +33,7 @@ export default function List({ data, pageContext }) {
           data.posts.edges.map((item) => {
             return (
               <Paper article key={item.node.id}>
-                {item.node.frontmatter.draft && <DraftBadge>Draft</DraftBadge>}
+                {item.node.frontmatter.draft && <DraftBadge>Luonnos</DraftBadge>}
                 <h2>
                   <Link to={item.node.frontmatter.path}>
                     {item.node.frontmatter.title}
@@ -43,7 +43,7 @@ export default function List({ data, pageContext }) {
                 <Meta>
                   <MetaSpan>{item.node.frontmatter.date}</MetaSpan>
                   <MetaActions>
-                    <Link to={item.node.frontmatter.path}>Read Article →</Link>
+                    <Link to={item.node.frontmatter.path}>Lue lisää →</Link>
                   </MetaActions>
                 </Meta>
               </Paper>
@@ -52,12 +52,12 @@ export default function List({ data, pageContext }) {
         <ListNav>
           {!isFirst && (
             <Link to={prevPage} rel="prev">
-              ← Newer
+              ← Uudemmat
             </Link>
           )}
           {!isLast && (
             <Link to={nextPage} rel="next">
-              Older →
+              Vanhemmat →
             </Link>
           )}
         </ListNav>
@@ -108,7 +108,7 @@ export const pageQuery = graphql`
           id
           excerpt
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "D.M.YYYY")
             path
             title
             draft

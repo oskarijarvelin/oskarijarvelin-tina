@@ -470,7 +470,7 @@ export const GlobalStyles = createGlobalStyle`
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 896px;
+  max-width: 1280px;
   margin: 0 auto;
   --wrapper-padding-x: 1rem;
   padding: 0 var(--wrapper-padding-x);
@@ -567,16 +567,38 @@ export const Main = styled.main`
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
 
   ${Wrapper} {
     flex: 1 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: stretch;
+    margin: 0 -2rem -2rem 0;
   }
   ${Paper} {
-    flex: 1 0 auto;
+    flex: 0 0 calc(100% - 2rem);
+    margin: 0 2rem 2rem 0;
+    max-width: calc(100% - 2rem);
+    padding: 2rem;
+
+    @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
+      flex: 0 0 calc(50% - 2rem);
+      max-width: calc(50% - 2rem);
+    }
+
+    &.fullwidth {
+      flex: 0 0 calc(100% - 2rem);
+      margin: 0 3rem 3rem 0;
+      max-width: calc(100% - 2rem);
+      padding: 2rem;
+
+      @media (min-width: ${(props) => props.theme.breakpoints.small}) {
+        padding: 4rem;
+      }
+    }
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.small}) {
@@ -724,7 +746,6 @@ export const MetaSpan = styled.span`
 export const DraftBadge = styled.span`
   display: inline-block;
   line-height: 1;
-  text-transform: uppercase;
   font-size: 0.9rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0 ${(props) => props.theme.radius.small} 0

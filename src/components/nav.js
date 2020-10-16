@@ -139,7 +139,6 @@ export const NavLink = styled(({ children, ...styleProps }) => (
   align-items: center;
   position: relative;
   text-align: center;
-  text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.5px;
   text-decoration: none;
@@ -148,6 +147,14 @@ export const NavLink = styled(({ children, ...styleProps }) => (
   overflow: visible;
   transition: all 150ms ${p => p.theme.easing};
   z-index: 1;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.medium}) {
+    padding: 0 0.75rem;
+  }
 
   &:focus-visible {
     opacity: 1;
@@ -364,8 +371,8 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
   order: 4;
 
   svg {
+    width: 2.5rem;
     height: auto;
-    width: 32px;
   }
 
   .open {

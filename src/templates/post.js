@@ -72,7 +72,7 @@ function Post(props) {
   return (
     <InlineForm form={form}>
       <PageLayout page={data}>
-        <Paper>
+        <Paper className="fullwidth">
           <Meta>
             <MetaSpan>{data.frontmatter.date}</MetaSpan>
           </Meta>
@@ -109,7 +109,7 @@ export const postQuery = graphql`
 
       frontmatter {
         path
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "D.M.YYYY")
         title
         draft
         authors

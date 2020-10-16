@@ -102,19 +102,32 @@ export const SiteTitle = styled.h1`
   margin: 0;
   flex: 1 0 auto;
   font-family: 'Roboto Condensed';
-  font-size: 1rem;
+  font-size: 1.35rem;
   font-weight: 700;
   align-self: stretch;
   display: flex;
   order: 1;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    font-size: 1.15rem;
+  }
+
+  @media (min-width: ${props => props.theme.breakpoints.medium}) {
+    font-size: 1.35rem;
+  }
 `
 
 export const HeaderWrapper = styled(Wrapper)`
-  display: flex;
-  align-self: stretch;
-  justify-content: space-between;
   align-items: center;
+  align-self: stretch;
+  display: flex;
   height: 100%;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.small}) {
+    padding: 0 3.5rem;
+  }
 `
 
 export const DarkModeToggle = styled(({ ...styleProps }) => {
@@ -126,8 +139,8 @@ export const DarkModeToggle = styled(({ ...styleProps }) => {
   )
 })`
   position: relative;
-  width: 1.5rem;
-  height: 2.75rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   border: 0;
   background: transparent;
@@ -140,17 +153,15 @@ export const DarkModeToggle = styled(({ ...styleProps }) => {
   transform-origin: 50% 50%;
 
   @media (min-width: ${props => props.theme.breakpoints.small}) {
-    width: 1.5rem;
-    height: 100%;
     margin-left: 1rem;
     order: 3;
   }
 
   svg {
     position: absolute;
-    top: calc(50% - 0.75rem);
-    left: calc(50% - 0.75rem);
-    width: 1.5rem;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+    width: 2rem;
     height: auto;
     fill: currentColor;
     transition: all 150ms ${props => props.theme.easing};
@@ -162,6 +173,12 @@ export const DarkModeToggle = styled(({ ...styleProps }) => {
     &:last-child {
       opacity: 1;
       transform: rotate(0deg);
+    }
+
+    @media (min-width: ${props => props.theme.breakpoints.small}) {
+      top: calc(50% - .75rem);
+      left: calc(50% - .75rem);
+      width: 1.5rem;
     }
   }
 
