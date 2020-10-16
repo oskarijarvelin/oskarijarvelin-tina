@@ -3,7 +3,7 @@
     "black": "#111111",
     "white": "#f7f7f7",
     "primary": "#223388",
-    "secondary": "#33AAAA"
+    "secondary": "#44CCCC"
   },
   "easing": "cubic-bezier(0.215, 0.610, 0.355, 1.000)",
   "breakpoints": {
