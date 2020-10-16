@@ -95,7 +95,9 @@ export const SiteLink = styled(Link)`
 export const SiteTitle = styled.h1`
   margin: 0;
   flex: 0 0 auto;
+  font-family: 'Roboto Condensed';
   font-size: 1rem;
+  font-weight: 700;
   align-self: stretch;
   display: flex;
 `

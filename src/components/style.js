@@ -45,8 +45,9 @@ export const Reset = css`
   h4,
   h5,
   h6 {
+    font-family: 'Roboto Condensed';
     font-size: 100%;
-    font-weight: normal;
+    font-weight: 700;
   }
 
   ul {
