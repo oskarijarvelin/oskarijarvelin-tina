@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import { usePlugin } from "tinacms"
 import { useRemarkForm, DeleteAction } from "gatsby-tinacms-remark"
@@ -14,12 +14,10 @@ import {
   DraftBadge,
 } from "../components/style"
 import { EditToggle } from "../components/editToggle"
-import { ListAuthors } from "../components/authors"
 import { PageLayout } from "../components/pageLayout"
 import { useAuthors } from "../components/useAuthors"
 
 function Post(props) {
-  const authors = useAuthors()
   const page = props.data.markdownRemark
   const formOptions = {
     actions: [DeleteAction],
@@ -28,12 +26,6 @@ function Post(props) {
         label: "Title",
         name: "rawFrontmatter.title",
         component: "text",
-      },
-      {
-        label: "Authors",
-        name: "rawFrontmatter.authors",
-        component: "authors",
-        authors: authors,
       },
       {
         name: "rawFrontmatter.draft",
@@ -112,7 +104,6 @@ export const postQuery = graphql`
         date(formatString: "D.M.YYYY")
         title
         draft
-        authors
         hero {
           large
           overlay
@@ -129,9 +120,6 @@ export const postQuery = graphql`
       fileRelativePath
       rawFrontmatter
       rawMarkdownBody
-    }
-    settingsJson(fileRelativePath: { eq: "/content/settings/authors.json" }) {
-      ...authors
     }
   }
 `

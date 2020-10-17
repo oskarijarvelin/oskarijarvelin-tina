@@ -10,13 +10,11 @@ import {
   MetaActions,
   DraftBadge,
 } from "../components/style"
-import { ListAuthors, AuthorsForm } from "../components/authors"
 import { Link } from "gatsby"
 import { PageLayout } from "../components/pageLayout"
 
 export default function List({ data, pageContext }) {
   const [page] = useLocalJsonForm(data.page, ListForm)
-  const [authors] = useLocalJsonForm(data.authors, AuthorsForm)
 
   const { slug, limit, skip, numPages, currentPage } = pageContext
   const isFirst = currentPage === 1
@@ -116,18 +114,9 @@ export const pageQuery = graphql`
             path
             title
             draft
-            authors
           }
         }
       }
-    }
-    authors: settingsJson(
-      fileRelativePath: { eq: "/content/settings/authors.json" }
-    ) {
-      ...authors
-
-      rawJson
-      fileRelativePath
     }
   }
 `
