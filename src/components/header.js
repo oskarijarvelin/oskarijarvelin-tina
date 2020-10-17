@@ -126,7 +126,7 @@ export const HeaderWrapper = styled(Wrapper)`
   padding: 0 2rem;
 
   @media (min-width: ${props => props.theme.breakpoints.small}) {
-    padding: 0 3.5rem;
+    padding: 0 3rem;
   }
 `
 
