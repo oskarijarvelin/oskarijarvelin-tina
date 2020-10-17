@@ -123,11 +123,6 @@ export const HeaderWrapper = styled(Wrapper)`
   display: flex;
   height: 100%;
   justify-content: space-between;
-  padding: 0 2rem;
-
-  @media (min-width: ${props => props.theme.breakpoints.small}) {
-    padding: 0 3rem;
-  }
 `
 
 export const DarkModeToggle = styled(({ ...styleProps }) => {

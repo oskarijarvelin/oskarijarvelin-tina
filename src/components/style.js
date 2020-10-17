@@ -576,23 +576,28 @@ export const Main = styled.main`
     flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
-    margin: 0 -2rem -2rem 0;
+    margin: 0;
+    padding: 0 1.1rem;
+
+    @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
+      margin: 0 -2rem -2rem 0;
+    }
   }
   ${Paper} {
-    flex: 0 0 calc(100% - 2rem);
-    margin: 0 2rem 2rem 0;
-    max-width: calc(100% - 2rem);
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 2rem;
 
     @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
       flex: 0 0 calc(50% - 2rem);
+      margin: 0 2rem 2rem 0;
       max-width: calc(50% - 2rem);
     }
 
     &.fullwidth {
-      flex: 0 0 calc(100% - 2rem);
-      margin: 0 3rem 3rem 0;
-      max-width: calc(100% - 2rem);
+      flex: 0 0 100%;
+      margin: 0;
+      max-width: 100%;
       padding: 2rem;
 
       @media (min-width: ${(props) => props.theme.breakpoints.small}) {

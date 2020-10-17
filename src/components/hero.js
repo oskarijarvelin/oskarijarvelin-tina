@@ -46,13 +46,6 @@ const HeroWrapper = styled.div`
   top: 0;
   padding-top: ${props => props.theme.header.height};
   min-height: 16rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-  @media (min-width: ${props => props.theme.breakpoints.small}) {
-    padding-left: 3.8rem;
-    padding-right: 3.8rem;
-  }
 
   ${props =>
     props.large &&
