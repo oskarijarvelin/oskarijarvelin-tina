@@ -2,6 +2,13 @@
   "path": "/",
   "blocks": [
     {
+      "title": "Monipuolinen osaaja Oulusta",
+      "center": false,
+      "underline": true,
+      "_template": "TitleBlock",
+      "content": ""
+    },
+    {
       "_template": "ContentBlock",
       "content": "Olen 26-vuotias **Web Developer** Oulusta."
     }
