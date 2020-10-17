@@ -34,18 +34,22 @@ export default function List({ data, pageContext }) {
             return (
               <Paper article key={item.node.id}>
                 {item.node.frontmatter.draft && <DraftBadge>Luonnos</DraftBadge>}
-                <h2>
-                  <Link to={item.node.frontmatter.path}>
-                    {item.node.frontmatter.title}
-                  </Link>
-                </h2>
-                <p>{item.node.excerpt}</p>
-                <Meta>
-                  <MetaSpan>{item.node.frontmatter.date}</MetaSpan>
-                  <MetaActions>
-                    <Link to={item.node.frontmatter.path}>Lue lisää →</Link>
-                  </MetaActions>
-                </Meta>
+                <FlexContainer>
+                  <div>
+                    <h2>
+                      <Link to={item.node.frontmatter.path}>
+                        {item.node.frontmatter.title}
+                      </Link>
+                    </h2>
+                    <p>{item.node.excerpt}</p>
+                  </div>
+                  <Meta>
+                    <MetaSpan>{item.node.frontmatter.date}</MetaSpan>
+                    <MetaActions>
+                      <Link to={item.node.frontmatter.path}>Lue lisää →</Link>
+                    </MetaActions>
+                  </Meta>
+                </FlexContainer>
               </Paper>
             )
           })}
@@ -137,6 +141,12 @@ export const ListNav = styled.div`
     display: inline-block;
     padding: 0.5rem 1rem;
   }
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const ListForm = {
