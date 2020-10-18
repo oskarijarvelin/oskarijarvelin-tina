@@ -2,7 +2,7 @@
 title: Gatsby.js ja TinaCMS - Seuraavan sukupolven verkkosivustot
 date: '2020-10-18T09:28:03.649Z'
 type: post
-path: /blog/gatsby-js-ja-tinacms---seuraavan-sukupolven-verkkosivustot
+path: /blogi/gatsby-js-ja-tinacms---seuraavan-sukupolven-verkkosivustot
 draft: false
 hero:
   image: ../images/blogi.jpg
