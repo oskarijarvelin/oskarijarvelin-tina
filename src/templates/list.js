@@ -16,7 +16,7 @@ import { PageLayout } from "../components/pageLayout"
 export default function List({ data, pageContext }) {
   const [page] = useLocalJsonForm(data.page, ListForm)
 
-  const { slug, limit, skip, numPages, currentPage } = pageContext
+  const { slug, numPages, currentPage } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage =

@@ -10,12 +10,10 @@ import {
   Paper,
   Meta,
   MetaSpan,
-  MetaActions,
   DraftBadge,
 } from "../components/style"
 import { EditToggle } from "../components/editToggle"
 import { PageLayout } from "../components/pageLayout"
-import { useAuthors } from "../components/useAuthors"
 
 function Post(props) {
   const page = props.data.markdownRemark
