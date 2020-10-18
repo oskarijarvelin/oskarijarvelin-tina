@@ -5,6 +5,6 @@ type: post
 path: /blog/gatsby-js-ja-tinacms---seuraavan-sukupolven-verkkosivustot
 draft: false
 hero:
-  image: ''
+  image: ../images/blogi.jpg
 ---
 Uskallan väittää että verkkosivustoni on toteutettu uusimmilla web-teknologioilla, vaikka uusia teknologioita ja JavaScript-kirjastoja syntyy webin uumenissa päivittäin. Sivustoni on nimittäin toteutettu _React_-pohjaisella **Gatsby.js** -frameworkillä.

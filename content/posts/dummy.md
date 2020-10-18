@@ -2,7 +2,7 @@
 type: dummmy
 draft: true
 hero:
-  image: ../images/coffee-beans.jpg
+  image: ../images/blogi.jpg
   large: false
   overlay: true
 ---

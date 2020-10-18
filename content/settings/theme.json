@@ -22,7 +22,7 @@
     "underline": true
   },
   "hero": {
-    "image": "../images/oskari.jpg",
+    "image": "../images/blogi.jpg",
     "large": false,
     "overlay": true,
     "overlap": "8rem",
