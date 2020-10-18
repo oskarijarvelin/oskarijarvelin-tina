@@ -5,7 +5,7 @@ type: post
 path: /blogi/gatsby-js-ja-tinacms---seuraavan-sukupolven-verkkosivustot
 draft: false
 hero:
-  image: ../images/blogi.jpg
+  image: ../images/laptop-3174729_1920.jpg
 ---
 Uskallan väittää että verkkosivustoni on toteutettu uusimmilla web-teknologioilla, vaikka uusia teknologioita ja JavaScript-kirjastoja syntyy webin uumenissa päivittäin. Sivustoni on nimittäin toteutettu kaksi vuotta vanhalla _React_-pohjaisella **Gatsby.js** -frameworkillä ja vuoden vanhalla **TinaCMS** -sisältöeditorilla.
 
