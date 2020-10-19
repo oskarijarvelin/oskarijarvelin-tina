@@ -16,7 +16,7 @@
     "small": "3px"
   },
   "header": {
-    "overline": true,
+    "overline": false,
     "transparent": true,
     "height": "3.25rem",
     "underline": true
