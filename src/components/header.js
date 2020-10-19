@@ -18,12 +18,12 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
                 {siteTitle}
               </SiteLink>
             </SiteTitle>
+            <Nav toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
             <DarkModeToggle
               aria-label="Toggle Dark Theme"
               onClick={toggleDarkMode}
               isDarkMode={isDarkMode}
             />
-            <Nav toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
           </HeaderWrapper>
         </header>
       )}

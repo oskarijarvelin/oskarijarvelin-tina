@@ -22,6 +22,11 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
 
   return (
     <>
+      <NavToggle
+        aria-label="Avaa valikko"   
+        onClick={toggleNavOpen}
+        navOpen={navOpen}
+      ></NavToggle>
       <StyledNavbar navOpen={navOpen} isDarkMode={isDarkMode}>
         {menu.menuItems.map(item => (
           <NavItem key={item.label}>
@@ -35,11 +40,6 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
           </NavItem>
         ))}
       </StyledNavbar>
-      <NavToggle
-        aria-label="Avaa valikko"   
-        onClick={toggleNavOpen}
-        navOpen={navOpen}
-      ></NavToggle>
     </>
   )
 }
