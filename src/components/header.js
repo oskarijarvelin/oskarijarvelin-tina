@@ -71,30 +71,12 @@ export const SiteLink = styled(Link)`
   margin: 0;
   transition: all 150ms ${p => p.theme.easing};
   z-index: 1;
+
   svg {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
     fill: currentColor;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: -1rem;
-    width: calc(100% + 2rem);
-    height: 100%;
-    background-color: ${props => props.theme.color.primary};
-    opacity: 0;
-    transition: all 150ms ${p => p.theme.easing};
-    z-index: -1;
-  }
-
-  &:focus-visible {
-    &:after {
-      opacity: 0.5;
-    }
   }
 `
 
@@ -177,15 +159,7 @@ export const DarkModeToggle = styled(({ ...styleProps }) => {
     }
   }
 
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    transform: rotate(360deg);
-    opacity: 1;
-  }
-
+  &:focus,
   &:hover {
     opacity: 1;
   }

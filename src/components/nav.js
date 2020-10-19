@@ -22,6 +22,11 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
 
   return (
     <>
+      <NavToggle
+        aria-label="Avaa valikko"   
+        onClick={toggleNavOpen}
+        navOpen={navOpen}
+      ></NavToggle>
       <StyledNavbar navOpen={navOpen} isDarkMode={isDarkMode}>
         {menu.menuItems.map(item => (
           <NavItem key={item.label}>
@@ -34,12 +39,7 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
             </NavLink>
           </NavItem>
         ))}
-      </StyledNavbar>
-      <NavToggle
-        aria-label="Avaa valikko"
-        onClick={toggleNavOpen}
-        navOpen={navOpen}
-      ></NavToggle>
+      </StyledNavbar> 
     </>
   )
 }
@@ -67,6 +67,11 @@ export const StyledNavbar = styled.ul`
     transition: all 150ms ${p => p.theme.easing};
     width: 100%;
     z-index: 1000;
+
+    &:focus-within {
+      opacity: 1;
+      pointer-events: all;
+    }
     
     ${props =>
       props.navOpen &&
