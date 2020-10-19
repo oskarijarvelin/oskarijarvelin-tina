@@ -432,24 +432,16 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  a:not([class]),
-  a:not([class]):visited {
+  a,
+  a:visited {
     color: ${(props) => props.theme.color.link};
-    text-decoration-color: ${(props) =>
-      transparentize(0.75, props.theme.color.link)};
+    text-decoration: underline;
     transition: all 150ms ${(props) => props.theme.easing};
-    &:hover {
-      color: ${(props) => shade(0.1, props.theme.color.link)};
-      text-decoration-color: ${(props) =>
-        transparentize(0.5, props.theme.color.link)};
-    }
-    &:focus {
-      color: ${(props) => shade(0.1, props.theme.color.link)};
-      text-decoration-color: ${(props) => shade(0.1, props.theme.color.link)};
-    }
+
+    &:hover,
+    &:focus,
     &:active {
-      color: ${(props) => shade(0.1, props.theme.color.link)};
-      text-decoration-color: ${(props) => props.theme.color.link};
+      text-decoration: none;
     }
   }
 

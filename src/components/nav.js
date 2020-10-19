@@ -22,11 +22,6 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
 
   return (
     <>
-      <NavToggle
-        aria-label="Avaa valikko"   
-        onClick={toggleNavOpen}
-        navOpen={navOpen}
-      ></NavToggle>
       <StyledNavbar navOpen={navOpen} isDarkMode={isDarkMode}>
         {menu.menuItems.map(item => (
           <NavItem key={item.label}>
@@ -39,7 +34,12 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
             </NavLink>
           </NavItem>
         ))}
-      </StyledNavbar> 
+      </StyledNavbar>
+      <NavToggle
+        aria-label="Avaa valikko"   
+        onClick={toggleNavOpen}
+        navOpen={navOpen}
+      ></NavToggle>
     </>
   )
 }
@@ -56,28 +56,20 @@ export const StyledNavbar = styled.ul`
         : mix(0.95, props.theme.color.white, props.theme.color.black)};
     bottom: 0;
     box-shadow: 0 1rem 2rem -0.5rem ${props => transparentize(0.5, props.theme.color.black)};
-    display: flex;
+    display: none;
     flex-direction: column;
     left: 0;
-    opacity: 0;
     padding: 2rem 0;
-    pointer-events: none;
     position: absolute;
     transform: translate3d(0, 100%, 0);
     transition: all 150ms ${p => p.theme.easing};
     width: 100%;
     z-index: 1000;
-
-    &:focus-within {
-      opacity: 1;
-      pointer-events: all;
-    }
     
     ${props =>
       props.navOpen &&
       css`
-        opacity: 1;
-        pointer-events: all;
+        display: flex;
       `};
   }
 
@@ -383,13 +375,13 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
     height: 3px;
     right: 0;
     position: absolute;
-    top: 15px;
+    top: calc(50% - 8px);
     transition: all .3s ease-in-out;
     width: 28px;
   }
 
   .menuBar2 {
-    top: 25px;
+    top: calc(50% + 2px);
     width: 20px;
   }
 
@@ -410,12 +402,11 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
     props.navOpen &&
     css`
       .menuBar {
-        top: 20px;
+        top: calc(50% - 3px);
         transform: rotate(45deg);
       }
     
       .menuBar2 {
-        top: 20px;
         transform: rotate(-45deg);
         width: 28px;
       }
