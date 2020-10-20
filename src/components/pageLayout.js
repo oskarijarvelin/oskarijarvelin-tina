@@ -12,7 +12,7 @@ import { useGlobalJsonForm } from "gatsby-tinacms-json"
 
 const merge = require("lodash.merge")
 
-export const PageLayout = ({ page, children }) => {
+export const PageLayout = ({ page, wide, children }) => {
   const data = useStaticQuery(graphql`
     query PageLayoutQuery {
       nav: settingsJson(
@@ -67,7 +67,7 @@ export const PageLayout = ({ page, children }) => {
       {pageTitle && <SEO title={pageTitle} />}
       <Hero hero={hero} />
       <Main>
-        <Wrapper>{children}</Wrapper>
+        <Wrapper className={wide ? 'wide' : ''}>{children}</Wrapper>
       </Main>
     </>
   )

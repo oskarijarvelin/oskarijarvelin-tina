@@ -470,6 +470,10 @@ export const Wrapper = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.small}) {
     --wrapper-padding-x: 2rem;
   }
+
+  &.wide {
+    max-width: 1280px;
+  }
 `
 
 export const Overlay = styled.div`
@@ -552,14 +556,15 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   ${Wrapper} {
-    flex: 1 0 auto;
+    align-items: flex-start;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: stretch;
+    justify-content: center;
     margin: 0;
     padding: 0 1.1rem;
 
@@ -569,13 +574,12 @@ export const Main = styled.main`
   }
   ${Paper} {
     flex: 0 0 100%;
-    max-width: 100%;
+    max-width: 600px;
     padding: 2rem;
 
     @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
       flex: 0 0 calc(50% - 2rem);
       margin: 0 2rem 2rem 0;
-      max-width: calc(50% - 2rem);
     }
 
     &.fullwidth {

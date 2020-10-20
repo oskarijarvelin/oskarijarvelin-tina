@@ -12,7 +12,7 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
     <ThemeContext.Consumer>
       {({ toggleDarkMode, isDarkMode }) => (
         <header {...styleProps}>
-          <HeaderWrapper>
+          <HeaderWrapper className={ siteTitle === ' Blogi' ? 'wide' : ''}>
             <SiteTitle>
               <SiteLink to="/">
                 {siteTitle}

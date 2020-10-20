@@ -24,7 +24,7 @@ export function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.title}`}
+      titleTemplate={`%s - ${site.title}`}
       meta={[
         {
           name: `description`,

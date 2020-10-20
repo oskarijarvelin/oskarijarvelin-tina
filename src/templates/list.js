@@ -25,7 +25,7 @@ export default function List({ data, pageContext }) {
   page.title = isFirst ? page.title : page.title + " - " + currentPage
 
   return (
-    <PageLayout page={page}>
+    <PageLayout page={page} wide={true}>
       <>
         {data.posts &&
           data.posts.edges.map((item) => {
