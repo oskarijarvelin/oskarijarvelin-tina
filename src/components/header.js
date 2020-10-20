@@ -123,7 +123,7 @@ export const DarkModeToggle = styled(({ ...styleProps }) => {
   background: transparent;
   color: inherit;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.7;
   order: 2;
   overflow: hidden;
   transition: all 300ms ${props => props.theme.easing};
