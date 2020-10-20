@@ -13,9 +13,9 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
     }
   `)
 
-  const [navOpen, setNavOpen] = useState(false)
-  const toggleNavOpen = () => {
-    setNavOpen(!navOpen)
+  const [navopen, setnavopen] = useState(false)
+  const togglenavopen = () => {
+    setnavopen(!navopen)
   }
 
   const menu = data.settingsJson
@@ -24,14 +24,14 @@ export const Nav = ({ toggleDarkMode, isDarkMode }) => {
     <>
       <NavToggle
         aria-label="Avaa valikko"   
-        onClick={toggleNavOpen}
-        navOpen={navOpen}
+        onClick={togglenavopen}
+        navopen={navopen.toString()}
       ></NavToggle>
-      <StyledNavbar navOpen={navOpen} isDarkMode={isDarkMode}>
+      <StyledNavbar navopen={navopen.toString()} isdarkmode={isDarkMode}>
         {menu.menuItems.map(item => (
           <NavItem key={item.label}>
             <NavLink
-              onClick={toggleNavOpen}
+              onClick={togglenavopen}
               partiallyActive={item.link === "/" ? false : true}
               to={item.link}
             >
@@ -67,7 +67,7 @@ export const StyledNavbar = styled.ul`
     z-index: 1000;
     
     ${props =>
-      props.navOpen &&
+      props.navopen === 'true' &&
       css`
         display: flex;
       `};
@@ -121,7 +121,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLink = styled(({ children, ...styleProps }) => (
-  <Link activeClassName="active" {...styleProps} isCurrent>
+  <Link activeClassName="active" {...styleProps} iscurrent="true">
     <span>{children}</span>
   </Link>
 ))`
@@ -188,7 +188,7 @@ export const NavLink = styled(({ children, ...styleProps }) => (
   }
 `
 
-export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
+export const NavToggle = styled(({ menuPpen, ...styleProps }) => {
   return (
     <button {...styleProps}>
       <span className="menuBar"></span>
@@ -249,7 +249,7 @@ export const NavToggle = styled(({ menuOpen, ...styleProps }) => {
   }
 
   ${props =>
-    props.navOpen &&
+    props.navopen === 'true' &&
     css`
       .menuBar {
         top: calc(50% - 3px);

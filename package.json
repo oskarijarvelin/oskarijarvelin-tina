@@ -1,9 +1,9 @@
 {
-  "name": "tina-grande",
+  "name": "oskarijarvelin-tina",
   "private": true,
-  "description": "A configurable starter for Gatsby & Tina",
-  "version": "0.1.0",
-  "author": "Scott Byrne <scott.byrne@forestry.io>",
+  "description": "oskarijarvelin.fi with Gatsby & Tina",
+  "version": "1.0.0",
+  "author": "Oskari Järvelin <contact@oskarijarvelin.fi>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
@@ -63,7 +63,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "clean": "rm -rf ./cache",
+    "clean": "gatsby clean",
     "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "gatsby develop",
@@ -72,6 +72,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tinacms/tina-starter-grande"
+    "url": "https://github.com/oskarijarvelin/oskarijarvelin-tina"
   }
 }

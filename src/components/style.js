@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle, css } from "styled-components"
-import { mix, shade, transparentize, getContrast } from "polished"
+import { mix, transparentize, getContrast } from "polished"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 

@@ -23,7 +23,7 @@ export const Hero = ({ hero }) => {
                 {Object.keys(hero.ctas).map(key => {
                   return (
                     <LinkButton
-                      primary={hero.ctas[key].primary}
+                      primary={hero.ctas[key].primary.toString()}
                       to={hero.ctas[key].link}
                     >
                       {hero.ctas[key].label}

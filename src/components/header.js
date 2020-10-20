@@ -10,7 +10,7 @@ import { Link } from "gatsby"
 export const Header = styled(({ siteTitle, ...styleProps }) => {
   return (
     <ThemeContext.Consumer>
-      {({ toggleDarkMode, isDarkMode, theme }) => (
+      {({ toggleDarkMode, isDarkMode }) => (
         <header {...styleProps}>
           <HeaderWrapper>
             <SiteTitle>
@@ -18,11 +18,11 @@ export const Header = styled(({ siteTitle, ...styleProps }) => {
                 {siteTitle}
               </SiteLink>
             </SiteTitle>
-            <Nav toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+            <Nav toggleDarkMode={toggleDarkMode} isdarkmode={isDarkMode} />
             <DarkModeToggle
               aria-label="Toggle Dark Theme"
               onClick={toggleDarkMode}
-              isDarkMode={isDarkMode}
+              isdarkmode={isDarkMode.toString()}
             />
           </HeaderWrapper>
         </header>
